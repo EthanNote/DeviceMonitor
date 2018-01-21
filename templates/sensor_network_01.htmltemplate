@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		html{
+			height: 100%;
+		}
+		body{
+			margin: 0px;
+			background-color: lightgray;
+			font-family: Arial;
+			height: 100%;
+		}
+		.view_title{
+			text-align: center;
+			padding: 10px;
+			font-size: 30px;
+			font-weight: bold;
+			background-color: lightgray;
+		}
+		.menu_strip{
+			background-color: dimgray;
+		}
+		.menu_item{
+			background-color: transparent;
+			padding: 10px 20px;
+			border: 0px;
+			margin: 2px;
+			color: white;
+			font-size: 20px;
+			font-weight: lighter;
+		}
+		.data_area{
+			background-color: white;
+			height: 80%;
+		}
+		.text_area{
+			float: left;
+			width: 40%;
+			height: 100%;
+			overflow-y: auto;
+		}
+		.graphics_area{
+			float: right;
+			width: 60%;
+			height: 100%;
+			background-color: #EEE	;
+		}
+		.device_profile{
+			margin: 10px;
+			border: 1px solid;
+
+		}
+		.device_name{
+			background-color: black;
+			padding: 10px;
+			color: white;
+		}
+		.device_parameter_row{
+			background-color: lightgray;
+			padding: 5px 10px;
+		}
+		.device_parameter_name{
+			float: left;
+			width: 50%;
+		}
+		.device_parameter_value{
+			float: left;
+			padding-left: 20px;
+		}
+		.graphics_canvas{
+			background-color: white;
+			width: 100%;
+			height: 100%;
+
+		}
+		.canvas_holder{
+			clear: both;
+			margin-bottom: 20px;
+		}
+		.footer{
+			text-align: center;
+		}
+		.copyright{
+			padding: 10px;
+			font-size: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="view_title">Device Monitor</div>
+	<div class="menu_strip">
+		<button class="menu_item">Menu 1</button>
+		<button class="menu_item">Menu 2</button>
+		<button class="menu_item">Menu 3</button>
+		<button class="menu_item">Menu 4</button>
+	</div>
+
+	<div class="data_area">
+		<div class="text_area">
+			{% for dev in devices %}
+			<div class="device_profile">
+				<div class="device_name">{{ dev[0] }}</div>
+				{% for param in dev[1] %}
+				<div class="device_parameter_row"><div class="device_parameter_name">{{ param[0] }}</div><div class="device_parameter_value">{{ param[1] }}</div><div style="clear: both;"></div></div>
+				{% endfor %}
+			</div>
+			{% endfor %}
+
+		</div>
+		<div class="graphics_area">
+			<div class="canvas_holder">
+				<canvas id="canvas" class="graphics_canvas" width="512" height="512"></canvas>
+			</div>
+		</div>
+		<div style="clear: both;"></div>
+	</div>
+	<div class="footer"><div class="copyright">©2018 Wireless Sensing Group of Xidian University</div></div>
+	<script type="text/javascript">
+		var cxt=document.getElementById("canvas").getContext("2d");
+		cxt.moveTo(0,0);
+		cxt.lineTo(0,0.0)
+		cxt.lineTo(10,0.1953125)
+		cxt.lineTo(20,0.78125)
+		cxt.lineTo(30,1.7578125)
+		cxt.lineTo(40,3.125)
+		cxt.lineTo(50,4.8828125)
+		cxt.lineTo(60,7.03125)
+		cxt.lineTo(70,9.5703125)
+		cxt.lineTo(80,12.5)
+		cxt.lineTo(90,15.8203125)
+		cxt.lineTo(100,19.53125)
+		cxt.lineTo(110,23.6328125)
+		cxt.lineTo(120,28.125)
+		cxt.lineTo(130,33.0078125)
+		cxt.lineTo(140,38.28125)
+		cxt.lineTo(150,43.9453125)
+		cxt.lineTo(160,50.0)
+		cxt.lineTo(170,56.4453125)
+		cxt.lineTo(180,63.28125)
+		cxt.lineTo(190,70.5078125)
+		cxt.lineTo(200,78.125)
+		cxt.lineTo(210,86.1328125)
+		cxt.lineTo(220,94.53125)
+		cxt.lineTo(230,103.3203125)
+		cxt.lineTo(240,112.5)
+		cxt.lineTo(250,122.0703125)
+		cxt.lineTo(260,132.03125)
+		cxt.lineTo(270,142.3828125)
+		cxt.lineTo(280,153.125)
+		cxt.lineTo(290,164.2578125)
+		cxt.lineTo(300,175.78125)
+		cxt.lineTo(310,187.6953125)
+		cxt.lineTo(320,200.0)
+		cxt.lineTo(330,212.6953125)
+		cxt.lineTo(340,225.78125)
+		cxt.lineTo(350,239.2578125)
+		cxt.lineTo(360,253.125)
+		cxt.lineTo(370,267.3828125)
+		cxt.lineTo(380,282.03125)
+		cxt.lineTo(390,297.0703125)
+		cxt.lineTo(400,312.5)
+		cxt.lineTo(410,328.3203125)
+		cxt.lineTo(420,344.53125)
+		cxt.lineTo(430,361.1328125)
+		cxt.lineTo(440,378.125)
+		cxt.lineTo(450,395.5078125)
+		cxt.lineTo(460,413.28125)
+		cxt.lineTo(470,431.4453125)
+		cxt.lineTo(480,450.0)
+		cxt.lineTo(490,468.9453125)
+		cxt.lineTo(500,488.28125)
+		cxt.lineTo(510,508.0078125)
+		cxt.stroke();
+		
+		function Vector2(x, y){
+					this.x=x;
+			this.y=y;
+		}
+		function T(v){
+			
+		}
+
+	</script>
+</body>
+</html>
