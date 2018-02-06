@@ -20,6 +20,6 @@ class JavascriptBuildinAPI(htmlPy.Object):
 app=htmlPy.AppGUI(width=960, height=720)
 app.template_path = os.path.abspath("templates")
 app.static_path = os.path.abspath("static")
-app.template = ('sensor_network_01.html', {'devices':device_list*2})
+app.template = ('sensor_network_01.htmltemplate', {'devices':device_list*2})
 app.bind(JavascriptBuildinAPI())
 app.start()
